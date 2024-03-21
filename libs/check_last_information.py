@@ -22,29 +22,39 @@ def init_json():
 
 
 
-def check_last_lawyer_information(site_name, last_info):
+def check_last_lawyer_information():
 
     with open("check.json", "r") as file:
-        data = json.load(file)
+        try:
+            data = json.load(file)
+        except:
+            return False
+    return data
 
-    if data[site_name] == last_info :
-        print("Last lawyer data has been not yet updated.")
-        return False
-    else:
+    # if data[site_name] == last_info :
+    #     print("Last lawyer data has been not yet updated.")
+    #     return data
+    # else:
 
-        print('Last lawyer data has been updated.')
-        return True
+    #     print('Last lawyer data has been updated.')
+    #     return True
 
 
 
 
 def update_last_lawyer_information(site_name, last_info):
     
-    with open("check.json", "r") as file:
-        data = json.load(file)
-
-    data[site_name] = last_info
+    # with open("check.json", "r") as file:
+    #     try:
+    #         data = json.load(file)
+    #     except:
+    #         data = False
+    #         pass
+    # info = []
+    # if data != False:
+    #     info=data
+    # info.append(last_info)
 
     with open("check.json", "w") as file:
-        json.dump(data, file)
+        json.dump(last_info, file)
         file.close()

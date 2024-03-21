@@ -35,7 +35,9 @@ def main():
         
         if 1:
             print("starting...")
-            multi_thread_function()
+            # multi_thread_function()
+            new_instance = Kensaku()
+            new_instance.get_information()
         else:
             pass
         
